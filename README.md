@@ -3,22 +3,31 @@
 
 ## 1 Setup
 
-### 1.1 Set up for Jupyter Notebook
+### 1.1 Set up the repo for the Jupyter Notebook
 
-Clone this repository
-Start by cloning the repo, to create a local copy of this folder in your machine:
+Clone this repository.
+
+Start by cloning the repo, to create a local copy of this folder in your machine.
+
+In the terminal:
 
 ```
-> git clone https://github.com/audantic/take-home-project-data-analyst.git
-> cd take-home-project-data-analyst
+cd ~/Documents/
+
+git clone https://github.com/audantic/take-home-project-data-analyst.git
+
+cd take-home-project-data-analyst
 ```
 
 ### 1.2 Set up Docker
 
+Install Docker: https://www.docker.com/community-edition#/download
+
+
 This may take a while depending on download speeds.
 
 ```
-> docker run -it --rm -p 8888:8888 jupyter/scipy-notebook
+docker pull jupyter/scipy-notebook
 ```
 
 ### 1.3 Start the notebook
@@ -27,7 +36,28 @@ This may take a while depending on download speeds.
 docker run -it --rm -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/scipy-notebook
 ```
 
+In the terminal, it will say something like:
+
+```bash
+$ docker run -it --rm -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/scipy-notebook
+/usr/local/bin/start-notebook.sh: ignoring /usr/local/bin/start-notebook.d/*
+
+Container must be run with group root to update passwd file
+Executing the command: jupyter notebook
+[I 20:38:18.195 NotebookApp] The Jupyter Notebook is running at:
+[I 20:38:18.195 NotebookApp] http://[all ip addresses on your system]:8888/?token=c08dd7b6e98ac6658203af4426626e1ae2514cdb8c60c864
+[I 20:38:18.195 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 20:38:18.196 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=c08dd7b6e98ac6658203af4426626e1ae2514cdb8c60c864
+```
+
+Copy/paste this URL into your browser.
+
 Once the notebook is running, go into the work directory and open the "project.ipynb"
+
 
 
 ## 2 Dataset
